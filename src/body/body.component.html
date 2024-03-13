@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de Vinilos</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+      background-color: #000;
+      color: #FFF;
+      font-family: 'Arial', sans-serif;
+      position: relative; /* Para posicionar correctamente el contador */
+    }
+    .contador {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      color: #FFF;
+      font-size: 20px;
+    }
+    .vinilos {
+      display: flex;
+      justify-content: center; /* Centrado horizontal */
+      flex-wrap: wrap; /* Ajuste para múltiples filas */
+      gap: 80px; /* Doble espacio entre los vinilos */
+      max-width: 1200px; /* Ancho máximo */
+      margin-top: 20px; /* Espacio superior */
+    }
+    .vinilo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 300px; /* Ancho fijo para cada vinilo y su reproductor */
+      margin-bottom: 80px; /* Doble espacio inferior entre vinilos */
+    }
+    h1 {
+      font-size: 2.5rem;
+      letter-spacing: 0.1em;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: 40px; /* Espacio inferior */
+    }
+    img {
+      width: 100%;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    img:hover {
+      transform: scale(1.1);
+    }
+    iframe {
+      border-radius: 12px;
+      width: 100%;
+      height: 80px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+<h1>Tienda de Vinilos</h1>
+<div class="contador">VINILOS VENDIDOS: <span id="vinilosVendidos">0</span></div>
+<div class="vinilos">
+  <div class="vinilo">
+    <a href="https://www.lacasadeldisco.es/travis-scott-vinilo-utopia-rojo.html" target="_blank">
+      <img src="https://thefader-res.cloudinary.com/private_images/w_760,c_limit,f_auto,q_auto:best/1000x1000bb-1690518223_w2nwvg/travis-scott-i-utopia-i-album-artwork.jpg" alt="Utopia de Travis Scott">
+    </a>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/18NOKLkZETa4sWwLMIm0UZ?utm_source=generator" width="100%" height="80" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+  <div class="vinilo">
+    <a href="https://www.amazon.com/-/es/Pink-Floyd-Dark-Side-Moon/dp/B01LTHN0DG/" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png" alt="Dark Side of the Moon">
+    </a>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4LH4d3cOWNNsVw41Gqt2kv?utm_source=generator" width="100%" height="80" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+  <div class="vinilo">
+    <a href="https://www.amazon.es/X-100PRE-Vinilo-Bad-Bunny/dp/B07TKNFSHS" target="_blank">
+      <img src="https://m.media-amazon.com/images/I/81W36WV9bFL._UF894,1000_QL80_.jpg" alt="X 100pre de Bad Bunny">
+    </a>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/7CjJb2mikwAWA1V6kewFBF?utm_source=generator" width="50%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>  </div>
+</div>
+<script>
+  let contador = 0;
+  setInterval(() => {
+    document.getElementById('vinilosVendidos').innerText = ++contador;
+  }, 1000);
+</script>
+</body>
+</html>
